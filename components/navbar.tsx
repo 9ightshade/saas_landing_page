@@ -24,13 +24,14 @@ export default function Navbar() {
         <div className="flex items-center">
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/logo.png"
+              src="/logo2.png"
               alt="Premium SaaS Logo"
               width={100}
               height={40}
-              className="h-10 w-auto object-contain"
+              className=" object-contain"
               priority
             />
+          
           </Link>
         </div>
 
