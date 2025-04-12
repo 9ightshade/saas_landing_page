@@ -11,7 +11,7 @@ export default function Home() {
     <CrmDashboard/>
     <FeaturesSection/>
     <FeaturesShowcase/>
-    {/* <DiscordCard/> */}
-    {/* <NewsSection/> */}
+    <DiscordCard/>
+    <NewsSection/>
   </div>);
 }
