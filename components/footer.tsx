@@ -10,7 +10,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer
-      className=" text-white py-12 px-4 md:px-12"
+      className=" text-white py-12 px-4 md:px-12 bg-[#060B27] "
       style={{
         backgroundImage: "url('/footerBg.png')",
         backgroundSize: "cover",
@@ -20,9 +20,9 @@ export default function Footer() {
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
       }}>
-      <div className="container mx-auto">
+      <div className="container mx-auto w-[80%] max-w-[1224px]">
         {/* Top section with newsletter and links */}
-        <div className="flex flex-col md:flex-row justify-between mb-12">
+        <div className="flex flex-col md:flex-row gap-36 justify-between mb-12">
           {/* Newsletter subscription */}
           <div className="mb-8 md:mb-0">
             <div className="mb-4">
@@ -36,20 +36,20 @@ export default function Footer() {
                 />
               </Link>
             </div>
-            <div className="bg-navy-800 p-6 rounded-lg max-w-sm">
-              <h3 className="text-xl font-bold mb-6">
+            <div className="bg-[#0E1330] border border-[#282D45] p-6 rounded-lg max-w-sm">
+              <h3 className="text-xl font-bold mb-6 text-[#F6F6F7] ">
                 Subscribe to our newsletter
               </h3>
               <form className="space-y-4">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full px-4 py-3 rounded-lg bg-navy-700 border border-navy-600 focus:outline-none focus:ring-2 focus:ring-purple-600"
+                  className="w-full px-4 py-3 bg-navy-700 border border-[#282D45] rounded-[50px] focus:outline-none focus:ring-2 focus:ring-purple-600"
                   required
                 />
                 <button
                   type="submit"
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-4 rounded-lg transition duration-300">
+                  className="w-full bg-[#7214FF] hover:bg-purple-700 text-white py-3 px-4 rounded-[36px] transition duration-300">
                   Subscribe
                 </button>
               </form>
@@ -215,22 +215,22 @@ export default function Footer() {
           <div className="flex space-x-4">
             <a
               href="#"
-              className="bg-navy-800 p-2 rounded-full hover:bg-purple-600 transition-colors">
+              className="bg-[#060B27] p-2 rounded-[8px] border border-[#282D45] hover:bg-[#7214FF] transition-colors">
               <FaFacebookF className="h-5 w-5" />
             </a>
             <a
               href="#"
-              className="bg-navy-800 p-2 rounded-full hover:bg-purple-600 transition-colors">
+              className="bg-[#060B27] p-2 rounded-[8px] border border-[#282D45] hover:bg-[#7214FF] transition-colors">
               <FaTwitter className="h-5 w-5" />
             </a>
             <a
               href="#"
-              className="bg-navy-800 p-2 rounded-full hover:bg-purple-600 transition-colors">
+              className="bg-[#060B27] p-2 rounded-[8px] border border-[#282D45] hover:bg-[#7214FF] transition-colors">
               <FaLinkedinIn className="h-5 w-5" />
             </a>
             <a
               href="#"
-              className="bg-navy-800 p-2 rounded-full hover:bg-purple-600 transition-colors">
+              className="bg-[#060B27] p-2 border border-[#282D45] rounded-[8px] hover:bg-[#7214FF] transition-colors">
               <FaInstagram className="h-5 w-5" />
             </a>
           </div>

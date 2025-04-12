@@ -45,20 +45,4 @@ export default function CrmDashboard() {
       </div>
     </div>
   );
-}
-
-{
-  /* <section className=" py-16 md:py-24">
-<div className="container mx-auto  text-center">
-  <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-6">
-    A CRM dashboard for engineering teams
-  </h1>
-  <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-    Lorem ipsum dolor sit amet consectetur. Gravida convallis orci
-    ultrices non. Ultricies tempor et ut cursus mi. Aliquam sed amet
-    vitae orci ac penatibus consectetur.
-  </p>
- 
-</div>
-</section> */
-}
+};
