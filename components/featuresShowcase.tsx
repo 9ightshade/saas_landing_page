@@ -189,8 +189,19 @@ export default function FeaturesShowcase() {
             </div>
           </div>
 
-          {/* Add empty div for CTA section */}
-          <div className="showcase-cta"></div>
+          {/* CTA section */}
+          <div className="flex flex-col sm:flex-row justify-center w-[50%] gap-10 mx-auto ">
+          <Link
+            href="/demo"
+            className="bg-[#7214FF] hover:bg-[#7214FF] text-white py-4 px-6 rounded-[36px] transition duration-300 ">
+            Get Started
+          </Link>
+          <Link
+            href="/pricing"
+            className="bg-[#15193485] hover:bg-[#15193485] text-white rounded-[36px] py-4 px-6 border border-[#282D45] transition duration-300">
+            Browse all features
+          </Link>
+        </div>
         </div>
       </div>
     </section>
