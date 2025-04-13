@@ -1,11 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function FeaturesShowcase() {
-  const [hoveredCard, setHoveredCard] = useState<string | null>("");
-
   const collections = [
     {
       id: 1,
@@ -39,7 +36,9 @@ export default function FeaturesShowcase() {
           </h2>
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
             {collections.map((collection) => (
-              <div key={collection.id} className="flex items-center gap-1 py-1">
+              <div
+                key={collection.id}
+                className="flex items-center gap-1 py-1 transition-transform hover:scale-105 duration-300">
                 <Image
                   src={collection.src}
                   alt={collection.title}
@@ -67,10 +66,6 @@ export default function FeaturesShowcase() {
               backgroundPosition: "center, center",
               backgroundRepeat: "no-repeat, no-repeat",
             }}
-            onMouseEnter={() => setHoveredCard("top")}
-            onMouseLeave={() => setHoveredCard(null)}
-            tabIndex={0}
-            role="region"
             aria-label="End-to-end encrypted inbox and messages">
             <div className="w-full md:w-[45%] flex flex-col gap-4 sm:gap-6 lg:gap-9 mb-6 md:mb-0 order-2 md:order-1">
               <h2 className="font-bold text-xl sm:text-2xl lg:text-3xl text-[#F6F6F7]">
@@ -88,10 +83,7 @@ export default function FeaturesShowcase() {
               </Link>
             </div>
             <div className="w-full md:w-[55%] flex justify-center items-center order-1 md:order-2">
-              <div
-                className={`transform transition-all duration-500 ${
-                  hoveredCard === "top" ? "scale-105" : "scale-100"
-                }`}>
+              <div>
                 <Image
                   src="/fsimagewrapper.png"
                   alt="End-to-end encrypted inbox"
@@ -103,7 +95,6 @@ export default function FeaturesShowcase() {
               </div>
             </div>
           </div>
-
           {/* Bottom Cards */}
           <div className="w-full flex flex-col lg:flex-row gap-6">
             {/* Mobile App Card */}
@@ -116,20 +107,9 @@ export default function FeaturesShowcase() {
                 backgroundPosition: "center, center",
                 backgroundRepeat: "no-repeat, no-repeat",
               }}
-              onMouseEnter={() => setHoveredCard("mobile")}
-              onMouseLeave={() => setHoveredCard(null)}
-              tabIndex={0}
-              role="region"
               aria-label="Mobile applications">
               <div className="relative flex justify-center">
-                <div
-                  className={`transform transition-all relative duration-500 overflow-hidden rounded-lg ${
-                    hoveredCard === "mobile"
-                      ? "scale-105 translate-y-2"
-                      : "scale-100"
-                  }`}
-                  onMouseEnter={() => setHoveredCard("mobile")}
-                  onMouseLeave={() => setHoveredCard(null)}>
+                <div>
                   <Image
                     src="/mobileimage.png"
                     alt="Mobile application"
@@ -137,7 +117,7 @@ export default function FeaturesShowcase() {
                     height={306}
                     className="w-full h-auto max-w-xs mx-auto object-contain"
                   />
-                 <div className="absolute bottom-0 bg-gradient-to-t from-[#1E1C45] to-[#0B0B21] opacity-95 z-0 h-8"></div>
+                  <div className="absolute bottom-0 bg-gradient-to-t from-[#1E1C45] to-[#0B0B21] opacity-95 z-0 h-8"></div>
                 </div>
               </div>
               <div className="flex flex-col gap-4 sm:gap-6">
@@ -161,10 +141,6 @@ export default function FeaturesShowcase() {
                 backgroundPosition: "center, center",
                 backgroundRepeat: "no-repeat, no-repeat",
               }}
-              onMouseEnter={() => setHoveredCard("upload")}
-              onMouseLeave={() => setHoveredCard(null)}
-              tabIndex={0}
-              role="region"
               aria-label="Upload, share, and preview any file">
               <div className="flex flex-col gap-3 sm:gap-4">
                 <h2 className="font-bold text-xl sm:text-2xl lg:text-3xl text-[#F6F6F7]">
@@ -176,10 +152,7 @@ export default function FeaturesShowcase() {
                 </p>
               </div>
               <div className="mt-4 flex justify-center">
-                <div
-                  className={`transform transition-all duration-500 ${
-                    hoveredCard === "upload" ? "scale-105" : "scale-100"
-                  }`}>
+                <div>
                   <Image
                     src="/uploadimagewrapper.png"
                     alt="File upload interface"
@@ -191,17 +164,16 @@ export default function FeaturesShowcase() {
               </div>
             </div>
           </div>
-
           {/* CTA section */}
           <div className="flex flex-col sm:flex-row justify-center w-[50%] gap-10 mx-auto ">
             <Link
               href="/demo"
-              className="bg-[#7214FF] hover:bg-[#7214FF] text-white py-4 px-6 rounded-[36px] transition duration-300 ">
+              className="bg-[#7214FF] hover:bg-[#7214FF] text-white py-4 px-6 rounded-[36px] transition duration-300 hover:scale-105">
               Get Started
             </Link>
             <Link
               href="/pricing"
-              className="bg-[#15193485] hover:bg-[#15193485] text-white rounded-[36px] py-4 px-6 border border-[#282D45] transition duration-300">
+              className="bg-[#15193485] hover:bg-[#15193485] text-white rounded-[36px] py-4 px-6 border border-[#282D45] transition duration-300 hover:scale-105">
               Browse all features
             </Link>
           </div>

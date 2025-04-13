@@ -18,44 +18,41 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-[#151934] text-white sticky top-0 z-50">
+    <nav className="bg-[#151934]/80 backdrop-blur-lg text-white sticky top-0 z-50 shadow-md transition-all">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center">
-          <Link href="/" className="flex-shrink-0">
-            <Image
-              src="/logo2.png"
-              alt="Premium SaaS Logo"
-              width={100}
-              height={40}
-              className=" object-contain"
-              priority
-            />
-          
-          </Link>
-        </div>
+        <Link href="/" className="flex-shrink-0">
+          <Image
+            src="/logo2.png"
+            alt="Premium SaaS Logo"
+            width={100}
+            height={40}
+            className="object-contain"
+            priority
+          />
+        </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center gap-8">
-          <ul className="flex items-center gap-8 text-gray-300 text-lg font-normal">
+        <div className="hidden lg:flex items-center gap-10">
+          <ul className="flex items-center gap-8 text-gray-300 text-base font-medium">
             {navLinks.map((link, index) => (
               <li key={index}>
                 <Link
                   href={link.href}
                   className="relative group hover:text-white transition-colors duration-300">
                   {link.label}
-                  <span className="absolute left-0 bottom-[-4px] w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-300" />
+                  <span className="absolute left-0 bottom-[-4px] h-[2px] bg-purple-500 w-0 group-hover:w-full transition-all duration-300 ease-in-out" />
                 </Link>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* CTA Button (Desktop) */}
+        {/* CTA Button */}
         <div className="hidden lg:block">
           <Link
             href="/demo"
-            className="bg-[#7214FF] text-white px-6 py-3 rounded-full font-medium hover:bg-[#5a0fd6] hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#7214FF]">
+            className="bg-[#7214FF] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#5a0fd6] hover:scale-105 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#7214FF]">
             Get a Demo
           </Link>
         </div>
@@ -64,7 +61,7 @@ export default function Navbar() {
         <div className="lg:hidden">
           <button
             onClick={toggleMenu}
-            className="text-gray-300 hover:text-white focus:outline-none"
+            className="text-gray-300 hover:text-white focus:outline-none transition-all duration-300"
             aria-label={isOpen ? "Close menu" : "Open menu"}>
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -73,15 +70,15 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-          isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        className={`lg:hidden transition-all duration-500 ease-in-out overflow-hidden bg-[#151934] ${
+          isOpen ? "max-h-[400px] opacity-100 py-6" : "max-h-0 opacity-0 py-0"
         }`}>
-        <ul className="container mx-auto px-4 sm:px-6 py-6 flex flex-col gap-4 text-gray-300 text-lg font-normal">
+        <ul className="container mx-auto px-4 sm:px-6 flex flex-col gap-4 text-gray-300 text-base font-medium animate-fade-in-down">
           {navLinks.map((link, index) => (
             <li key={index}>
               <Link
                 href={link.href}
-                className="block py-2 hover:text-white transition-colors duration-300"
+                className="block py-2 px-2 hover:text-white hover:translate-x-1 transition-all duration-300"
                 onClick={() => setIsOpen(false)}>
                 {link.label}
               </Link>
@@ -90,7 +87,7 @@ export default function Navbar() {
           <li>
             <Link
               href="/demo"
-              className="block bg-[#7214FF] text-white px-6 py-3 rounded-full font-medium text-center hover:bg-[#5a0fd6] transition-all duration-300"
+              className="mt-2 block bg-[#7214FF] text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-[#5a0fd6] transition-all duration-300"
               onClick={() => setIsOpen(false)}>
               Get a Demo
             </Link>
