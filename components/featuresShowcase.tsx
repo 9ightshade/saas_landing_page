@@ -165,15 +165,15 @@ export default function FeaturesShowcase() {
             </div>
           </div>
           {/* CTA section */}
-          <div className="flex flex-col sm:flex-row justify-center w-[50%] gap-10 mx-auto ">
+          <div className="flex flex-col sm:flex-row justify-center w-full sm:w-auto md:w-[80%] lg:w-[60%] xl:w-[50%] gap-4 sm:gap-6 md:gap-10 mx-auto">
             <Link
               href="/demo"
-              className="bg-[#7214FF] hover:bg-[#7214FF] text-white py-4 px-6 rounded-[36px] transition duration-300 hover:scale-105">
+              className="bg-[#7214FF] hover:bg-[#6010db] text-white text-center py-3 sm:py-4 px-6 rounded-full transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#7214FF] focus:ring-opacity-50">
               Get Started
             </Link>
             <Link
               href="/pricing"
-              className="bg-[#15193485] hover:bg-[#15193485] text-white rounded-[36px] py-4 px-6 border border-[#282D45] transition duration-300 hover:scale-105">
+              className="bg-[#15193485] hover:bg-[#1d2344] text-white text-center rounded-full py-3 sm:py-4 px-6 border border-[#282D45] transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#282D45] focus:ring-opacity-50">
               Browse all features
             </Link>
           </div>

@@ -40,9 +40,9 @@ export default function ClientTestimonials() {
           urna sapien.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="relative px-2 md:px-5">
+            <div key={testimonial.id} className="relative px-2 md:px-4">
               <div className="testimonial-bgImage absolute bottom-0 left-0 right-0 h-auto z-0">
                 <Image
                   src={testimonial.bg}
@@ -50,43 +50,46 @@ export default function ClientTestimonials() {
                   height={110}
                   width={392}
                   className="w-full object-cover z-0"
+                  loading="lazy"
                 />
               </div>
               <div
-                className="bg-[#0E1330] rounded-3xl relative z-10 p-5 md:p-6 mb-7 border border-[#282D45] 
-                transition-all duration-300 ease-in-out
-                hover:border-[#3D4266] hover:shadow-lg hover:-translate-y-1 hover:bg-[#121838] 
-                group cursor-pointer">
+                className="bg-[#0E1330] rounded-3xl relative z-10 p-4 md:p-6 mb-6 border border-[#282D45] 
+        transition-all duration-300 ease-in-out
+        hover:border-[#3D4266] hover:shadow-lg hover:-translate-y-1 hover:bg-[#121838] 
+        group cursor-pointer">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center">
-                    <div className="mr-3 transition-transform duration-300 group-hover:scale-105">
+                  <div className="flex items-center space-x-3">
+                    <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
                       <Image
                         src={testimonial.image}
                         alt={testimonial.name}
                         width={48}
                         height={48}
-                        className="rounded-[10px]"
+                        className="rounded-[10px] w-10 h-10 sm:w-12 sm:h-12"
+                        loading="lazy"
                       />
                     </div>
-                    <div>
-                      <h3 className="text-white font-medium group-hover:text-[#F6F6F7]">
+                    <div className="min-w-0">
+                      <h3 className="text-white font-medium text-sm sm:text-base truncate group-hover:text-[#F6F6F7]">
                         {testimonial.name}
                       </h3>
-                      <p className="text-[#8F9BB7] text-sm group-hover:text-[#A2AECF]">
+                      <p className="text-[#8F9BB7] text-xs sm:text-sm truncate group-hover:text-[#A2AECF]">
                         {testimonial.role}
                       </p>
                     </div>
                   </div>
-                  <div className="">
+                  <div className="flex-shrink-0 ml-2">
                     <Image
                       src="/quotes.png"
                       alt="Quote icon"
-                      width={57}
-                      height={41}
+                      width={40}
+                      height={30}
+                      className="w-8 h-6 sm:w-10 sm:h-8 md:w-12 md:h-10"
                     />
                   </div>
                 </div>
-                <p className="text-[#FFFFFF] text-sm group-hover:text-[#F6F6F7]">
+                <p className="text-[#FFFFFF] text-xs sm:text-sm md:text-base group-hover:text-[#F6F6F7] line-clamp-4 sm:line-clamp-none">
                   {testimonial.text}
                 </p>
               </div>
